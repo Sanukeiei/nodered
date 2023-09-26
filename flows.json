@@ -1,0 +1,104 @@
+[
+    {
+        "id": "0e5775606b9a9917",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d16445c7e34ff336",
+        "type": "debug",
+        "z": "0e5775606b9a9917",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a46a4b6a5ba86bb0",
+        "type": "file",
+        "z": "0e5775606b9a9917",
+        "name": "",
+        "filename": "/home/pi/Desktop/temperature.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 460,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b250392dac056a86",
+        "type": "ds18b20",
+        "z": "0e5775606b9a9917",
+        "name": "",
+        "sensorid": "28-3ce104576f27",
+        "timer": "0.03",
+        "x": 460,
+        "y": 140,
+        "wires": [
+            [
+                "d16445c7e34ff336",
+                "33f7c0c3801fc851"
+            ]
+        ]
+    },
+    {
+        "id": "33f7c0c3801fc851",
+        "type": "ui_gauge",
+        "z": "0e5775606b9a9917",
+        "name": "",
+        "group": "e601114dbf76f3b8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e601114dbf76f3b8",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "9fecff63820c57a4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9fecff63820c57a4",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
